@@ -55,10 +55,10 @@ I'm Aman. I'm a computer science student. I build tools that are useful to me, l
 
 | Project | What I did |
 | --- | --- |
-| [thcolin/gamepad-media-center-aggregator](https://github.com/thcolin/gamepad-media-center-aggregator)<br><sub>Gamepad media center for Plex, Jellyfin and Stremio</sub> | Fixed up the PS4 build: HDR video, subtitles, USB drives, crash fixes. 6 PRs merged, 4 more open (in-app updates, Stremio streams). |
-| [erikwb/blueferry](https://github.com/erikwb/blueferry)<br><sub>iMessage and SMS on Linux over Bluetooth</sub> | Added a quick-reply box to message popups, plus a Bluetooth fallback. 2 PRs merged. |
-| [zenvyzenshiro/NXNativeWindows](https://github.com/zenvyzenshiro/NXNativeWindows) | Linux build support. Merged. |
-| [openrazer/openrazer.github.io](https://github.com/openrazer/openrazer.github.io) | Adding keyglow to the OpenRazer apps list. Open. |
+| [GMCA](https://github.com/thcolin/gamepad-media-center-aggregator)<br><sub>Gamepad media center</sub> | Fixed up the PS4 build: HDR video, subtitles, USB drives, crash fixes. 6 PRs merged, 4 more open (in-app updates, Stremio streams). |
+| [BlueFerry](https://github.com/erikwb/blueferry)<br><sub>iMessage on Linux</sub> | Added a quick-reply box to message popups, plus a Bluetooth fallback. 2 PRs merged. |
+| [NXNative](https://github.com/zenvyzenshiro/NXNativeWindows)<br><sub>Windows port</sub> | Linux build support. Merged. |
+| [OpenRazer](https://github.com/openrazer/openrazer.github.io)<br><sub>Project website</sub> | Adding keyglow to the OpenRazer apps list. Open. |
 
 ### Tools
 
