@@ -27,6 +27,8 @@ jobs:
           SETTING_JSON: profile-3d.json
       - name: Remove the radar chart
         run: python3 .github/scripts/remove-radar.py profile-3d-contrib/profile-red.svg
+      - name: Add month labels
+        run: python3 .github/scripts/months.py profile-3d-contrib/profile-red.svg
       - name: Count private repos in the language pie
         env:
           LANGS_TOKEN: ${{ secrets.LANGS_TOKEN }}
