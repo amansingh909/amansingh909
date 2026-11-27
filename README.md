@@ -46,7 +46,7 @@ I'm Aman. I'm a computer science student. I build tools that are useful to me, l
     <td colspan="3" width="50%" valign="top">
       <b>REDLINE</b><br>
       <code>Python</code> <code>Textual</code> <code>Ollama</code><br><br>
-      A terminal cockpit for chatting with local AI models through Ollama. Its main trick is a thinking switch on every message, so a reasoning model can answer fast or think it through, something the other Ollama apps I tried couldn't do. Saved sessions, quick model switching and a command palette.
+      A terminal app for chatting with local AI models through Ollama, with a switch on every message to turn the model's thinking on or off. Saved sessions and quick model switching.
     </td>
   </tr>
 </table>
