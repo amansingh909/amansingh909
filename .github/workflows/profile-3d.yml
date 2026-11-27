@@ -37,6 +37,8 @@ jobs:
         env:
           LANGS_TOKEN: ${{ secrets.LANGS_TOKEN }}
         run: python3 .github/scripts/stats.py profile-3d-contrib/profile-red.svg
+      - name: Build the phone version
+        run: python3 .github/scripts/portrait.py profile-3d-contrib/profile-red.svg profile-3d-contrib/profile-red-portrait.svg
       - name: Commit & Push
         run: |
           git config user.name github-actions

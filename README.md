@@ -47,7 +47,10 @@ I'm Aman. I'm a computer science student. I build tools that are useful to me, l
 ### Activity
 
 <p align="center">
-  <img src="profile-3d-contrib/profile-red.svg" width="100%" alt="3D contribution graph for the last year">
+  <picture>
+    <source media="(max-width: 600px)" srcset="profile-3d-contrib/profile-red-portrait.svg">
+    <img src="profile-3d-contrib/profile-red.svg" width="100%" alt="3D contribution graph for the last year">
+  </picture>
 </p>
 
 <p align="center">
