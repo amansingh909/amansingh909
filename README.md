@@ -63,8 +63,8 @@ I'm Aman. I'm a computer science student. I build tools that are useful to me, l
 ### Tools
 
 <p align="center">
-  <img src="assets/tools-languages.svg" alt="Rust, C++, Python, TypeScript, JavaScript, Go, Bash, Java"><br>
-  <img src="assets/tools-platforms.svg" alt="Linux, Docker, Git, Neovim, Cloudflare, Svelte, React, MySQL">
+  <a href="https://www.rust-lang.org"><img src="assets/icons/rust.svg" alt="Rust"></a><a href="https://isocpp.org"><img src="assets/icons/cpp.svg" alt="C++"></a><a href="https://www.python.org"><img src="assets/icons/python.svg" alt="Python"></a><a href="https://www.typescriptlang.org"><img src="assets/icons/typescript.svg" alt="TypeScript"></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="assets/icons/javascript.svg" alt="JavaScript"></a><a href="https://go.dev"><img src="assets/icons/go.svg" alt="Go"></a><a href="https://www.gnu.org/software/bash/"><img src="assets/icons/bash.svg" alt="Bash"></a><a href="https://dev.java"><img src="assets/icons/java.svg" alt="Java"></a><br>
+  <a href="https://kernel.org"><img src="assets/icons/linux.svg" alt="Linux"></a><a href="https://www.docker.com"><img src="assets/icons/docker.svg" alt="Docker"></a><a href="https://git-scm.com"><img src="assets/icons/git.svg" alt="Git"></a><a href="https://neovim.io"><img src="assets/icons/neovim.svg" alt="Neovim"></a><a href="https://www.cloudflare.com"><img src="assets/icons/cloudflare.svg" alt="Cloudflare"></a><a href="https://svelte.dev"><img src="assets/icons/svelte.svg" alt="Svelte"></a><a href="https://react.dev"><img src="assets/icons/react.svg" alt="React"></a><a href="https://www.mysql.com"><img src="assets/icons/mysql.svg" alt="MySQL"></a>
 </p>
 
 ### Activity
