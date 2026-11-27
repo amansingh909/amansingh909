@@ -5,8 +5,8 @@ Usage: LANGS_TOKEN=... python3 .github/scripts/languages.py profile-3d-contrib/p
 
 It counts the owner's commits from the last 365 days on the default branch of every repo they own
 (private repos and forks included), groups them by each repo's main language, and swaps the graph
-tool's public-only pie for one built from those counts. Only language names and percentages end up
-in the image, never repo names.
+tool's public-only pie for a neon one built from those counts. Only language names and percentages
+end up in the image, never repo names.
 
 LANGS_TOKEN is a fine-grained token with read-only Contents access to the owner's repos. Without it
 the script leaves the graph alone and exits 0, so the tool's own pie stays.
@@ -23,6 +23,9 @@ SVG = "http://www.w3.org/2000/svg"
 PIE_TRANSFORM = "translate(40, 520)"   # where the graph tool puts its pie (fixed by the pinned version)
 OTHER_COLOR = "#444444"
 TOP = 5
+# cyberpunk neon, handed out by rank; "Other" gets a dim slate
+NEON = ["#ff2a6d", "#05d9e8", "#fcee0a", "#b026ff", "#39ff14"]
+OTHER_NEON = "#3a3f58"
 
 QUERY = """
 query($uid: ID!, $since: GitTimestamp!, $cursor: String) {
@@ -96,19 +99,38 @@ def _arc_path(cx, cy, r_out, r_in, a0, a1):
             f"L {pt(r_in, a1)} A {r_in} {r_in} 0 0 0 {pt(r_in, am)} A {r_in} {r_in} 0 0 0 {pt(r_in, a0)} Z")
 
 
+def neon_colors(langs):
+    colors, rank = [], 0
+    for name, _, _ in langs:
+        if name == "Other":
+            colors.append(OTHER_NEON)
+        else:
+            colors.append(NEON[rank % len(NEON)])
+            rank += 1
+    return colors
+
+
 def pie_group(langs):
     total = sum(n for _, _, n in langs)
+    colors = neon_colors(langs)
     g = ET.Element(f"{{{SVG}}}g", {"transform": PIE_TRANSFORM})
+    defs = ET.SubElement(g, f"{{{SVG}}}defs")
+    glow = ET.SubElement(defs, f"{{{SVG}}}filter", {"id": "neon", "x": "-30%", "y": "-30%", "width": "160%", "height": "160%"})
+    ET.SubElement(glow, f"{{{SVG}}}feGaussianBlur", {"in": "SourceGraphic", "stdDeviation": "5", "result": "blur"})
+    merge = ET.SubElement(glow, f"{{{SVG}}}feMerge")
+    ET.SubElement(merge, f"{{{SVG}}}feMergeNode", {"in": "blur"})
+    ET.SubElement(merge, f"{{{SVG}}}feMergeNode", {"in": "SourceGraphic"})
+    ring = ET.SubElement(g, f"{{{SVG}}}g", {"filter": "url(#neon)"})
     a = -math.pi / 2
-    for _, color, n in langs:
+    for (_, _, n), color in zip(langs, colors):
         a1 = a + 2 * math.pi * n / total
-        ET.SubElement(g, f"{{{SVG}}}path", {"d": _arc_path(130, 130, 125, 68, a, a1), "fill": color,
-                                             "class": "stroke-bg", "stroke-width": "2px"})
+        ET.SubElement(ring, f"{{{SVG}}}path", {"d": _arc_path(130, 130, 125, 68, a, a1), "fill": color,
+                                                "class": "stroke-bg", "stroke-width": "2px"})
         a = a1
     legend = ET.SubElement(g, f"{{{SVG}}}g", {"transform": "translate(273, 0)"})
     size, step = 21.67, 32.5
     top = 130 - step * len(langs) / 2
-    for i, (name, color, n) in enumerate(langs):
+    for i, ((name, _, n), color) in enumerate(zip(langs, colors)):
         y = top + i * step
         ET.SubElement(legend, f"{{{SVG}}}rect", {"x": "0", "y": f"{y + 5.4:.2f}", "width": f"{size}",
                                                   "height": f"{size}", "fill": color, "class": "stroke-bg",
