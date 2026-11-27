@@ -67,18 +67,19 @@ def compute(cal):
             "current": current}
 
 
-def glyph_text(text, size, baseline):
-    """Right-aligned at x=0: one path per visible character, from the stored letter shapes."""
+def glyph_text(text, size, x, baseline, anchor="end", cls="fill-strong"):
+    """One path per visible character from the stored letter shapes, anchored at x like SVG text-anchor."""
     scale = size / GLYPHS["unitsPerEm"]
-    width = sum(GLYPHS["glyphs"][ch]["adv"] for ch in text)
+    width = sum(GLYPHS["glyphs"][ch]["adv"] for ch in text) * scale
+    left = x - {"end": width, "middle": width / 2}.get(anchor, 0)
     g = ET.Element(f"{{{SVG}}}g", {"class": "stat-number", "aria-label": text,
-                                    "transform": f"translate({-width * scale:.2f} {baseline}) scale({scale:.4f} {-scale:.4f})"})
-    x = 0
+                                    "transform": f"translate({left:.2f} {baseline}) scale({scale:.4f} {-scale:.4f})"})
+    pos = 0
     for ch in text:
         glyph = GLYPHS["glyphs"][ch]
         if glyph["d"]:
-            ET.SubElement(g, f"{{{SVG}}}path", {"d": glyph["d"], "transform": f"translate({x} 0)", "class": "fill-strong"})
-        x += glyph["adv"]
+            ET.SubElement(g, f"{{{SVG}}}path", {"d": glyph["d"], "transform": f"translate({pos} 0)", "class": cls})
+        pos += glyph["adv"]
     return g
 
 
@@ -90,7 +91,7 @@ def stats_group(st):
     g = ET.Element(f"{{{SVG}}}g", {"transform": "translate(1240, 0)", "class": MARK})
     for i, (number, label) in enumerate(rows):
         y = 125 + i * 95
-        g.append(glyph_text(number, 48, y))
+        g.append(glyph_text(number, 48, 0, y))
         lab = ET.SubElement(g, f"{{{SVG}}}text", {"x": "0", "y": str(y + 30), "text-anchor": "end", "class": "fill-weak",
                                                   "style": "font-size: 20px;"})
         lab.text = label

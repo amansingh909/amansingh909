@@ -1,6 +1,6 @@
 # Banner font
 
-The banner images embed a trimmed copy of [Space Grotesk](https://github.com/floriankarsten/space-grotesk) (only the letters the banner uses), under the SIL Open Font License 1.1, reproduced below.
+The banner subtitle embeds a trimmed copy of [Space Grotesk](https://github.com/floriankarsten/space-grotesk) (only the letters the banner uses), under the SIL Open Font License 1.1, reproduced below.
 
 Copyright 2020 The Space Grotesk Project Authors (https://github.com/floriankarsten/space-grotesk)
 
@@ -96,6 +96,6 @@ DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
 OTHER DEALINGS IN THE FONT SOFTWARE.
 
-## Graph numbers
+## Name and graph numbers
 
-The big numbers in the contribution graph are drawn from letter shapes of Roguepunk by Cikareotype (cikareotype.com), a font that is free for personal, non-commercial use. Only those shapes are stored here (in `.github/scripts/number-glyphs.json`), not the font.
+The name in the banner and the big numbers in the contribution graph are drawn from letter shapes of Roguepunk by Cikareotype (cikareotype.com), a font that is free for personal, non-commercial use. Only those shapes are stored here (inside the banner images and in `.github/scripts/number-glyphs.json`), not the font.
