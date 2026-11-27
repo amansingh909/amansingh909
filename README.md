@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/typing.svg" alt="Rust tools for Linux. PS4 homebrew. Networking and self-hosting. Learning bug bounty.">
+  <img src="assets/typing.svg" alt="Rust tools for Linux. PS4 homebrew. Networking and self-hosting. Running local AI models. Learning bug bounty.">
 </p>
 
 <p align="center">
