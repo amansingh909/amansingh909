@@ -1,5 +1,8 @@
 <p align="center">
-  <img src="assets/banner.svg" width="100%" alt="Aman Singh. CS student · Linux tools, Console Homebrew and Networking">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
+    <img src="assets/banner-light.svg" width="100%" alt="Aman Singh. CS student · Linux tools, Console Homebrew and Networking">
+  </picture>
 </p>
 
 <p align="center">
@@ -48,8 +51,10 @@ I'm Aman. I'm a computer science student. I build tools that are useful to me, l
 
 <p align="center">
   <picture>
-    <source media="(max-width: 600px)" srcset="profile-3d-contrib/profile-red-portrait.svg">
-    <img src="profile-3d-contrib/profile-red.svg" width="100%" alt="3D contribution graph for the last year">
+    <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="profile-3d-contrib/profile-red-portrait.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="profile-3d-contrib/profile-red.svg">
+    <source media="(max-width: 600px)" srcset="profile-3d-contrib/profile-red-light-portrait.svg">
+    <img src="profile-3d-contrib/profile-red-light.svg" width="100%" alt="3D contribution graph for the last year">
   </picture>
 </p>
 

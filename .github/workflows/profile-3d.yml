@@ -26,19 +26,19 @@ jobs:
           USERNAME: ${{ github.repository_owner }}
           SETTING_JSON: profile-3d.json
       - name: Remove the radar chart
-        run: python3 .github/scripts/remove-radar.py profile-3d-contrib/profile-red.svg
+        run: for f in profile-red profile-red-light; do python3 .github/scripts/remove-radar.py profile-3d-contrib/$f.svg; done
       - name: Add month labels
-        run: python3 .github/scripts/months.py profile-3d-contrib/profile-red.svg
+        run: for f in profile-red profile-red-light; do python3 .github/scripts/months.py profile-3d-contrib/$f.svg; done
       - name: Count private repos in the language pie
         env:
           LANGS_TOKEN: ${{ secrets.LANGS_TOKEN }}
-        run: python3 .github/scripts/languages.py profile-3d-contrib/profile-red.svg
+        run: for f in profile-red profile-red-light; do python3 .github/scripts/languages.py profile-3d-contrib/$f.svg; done
       - name: Add busiest day and streaks
         env:
           LANGS_TOKEN: ${{ secrets.LANGS_TOKEN }}
-        run: python3 .github/scripts/stats.py profile-3d-contrib/profile-red.svg
+        run: for f in profile-red profile-red-light; do python3 .github/scripts/stats.py profile-3d-contrib/$f.svg; done
       - name: Build the phone version
-        run: python3 .github/scripts/portrait.py profile-3d-contrib/profile-red.svg profile-3d-contrib/profile-red-portrait.svg
+        run: for f in profile-red profile-red-light; do python3 .github/scripts/portrait.py profile-3d-contrib/$f.svg profile-3d-contrib/$f-portrait.svg; done
       - name: Commit & Push
         run: |
           git config user.name github-actions
