@@ -9,14 +9,18 @@ Uses the same read-only LANGS_TOKEN as languages.py. Without it the script leave
 and exits 0. Running it twice replaces the numbers instead of stacking a second copy.
 """
 import datetime
+import json
 import os
 import sys
 import xml.etree.ElementTree as ET
+from pathlib import Path
 
 from languages import graphql
 
 SVG = "http://www.w3.org/2000/svg"
 MARK = "profile-stats"
+# big numbers are drawn from Roguepunk letter shapes (personal-use font; only the shapes are in the repo)
+GLYPHS = json.loads((Path(__file__).resolve().parent / "number-glyphs.json").read_text(encoding="utf-8"))
 
 CALENDAR = """
 query { viewer { contributionsCollection { contributionCalendar {
@@ -63,6 +67,21 @@ def compute(cal):
             "current": current}
 
 
+def glyph_text(text, size, baseline):
+    """Right-aligned at x=0: one path per visible character, from the stored letter shapes."""
+    scale = size / GLYPHS["unitsPerEm"]
+    width = sum(GLYPHS["glyphs"][ch]["adv"] for ch in text)
+    g = ET.Element(f"{{{SVG}}}g", {"class": "stat-number", "aria-label": text,
+                                    "transform": f"translate({-width * scale:.2f} {baseline}) scale({scale:.4f} {-scale:.4f})"})
+    x = 0
+    for ch in text:
+        glyph = GLYPHS["glyphs"][ch]
+        if glyph["d"]:
+            ET.SubElement(g, f"{{{SVG}}}path", {"d": glyph["d"], "transform": f"translate({x} 0)", "class": "fill-strong"})
+        x += glyph["adv"]
+    return g
+
+
 def stats_group(st):
     rows = [(str(st["best"]), f"busiest day · {st['best_date']}")]
     streak = "longest streak" + (f" · {st['longest_from']} to {st['longest_to']}" if st["longest"] else "")
@@ -71,9 +90,7 @@ def stats_group(st):
     g = ET.Element(f"{{{SVG}}}g", {"transform": "translate(1240, 0)", "class": MARK})
     for i, (number, label) in enumerate(rows):
         y = 125 + i * 95
-        num = ET.SubElement(g, f"{{{SVG}}}text", {"x": "0", "y": str(y), "text-anchor": "end", "class": "fill-strong",
-                                                  "style": "font-size: 44px; font-weight: bold;"})
-        num.text = number
+        g.append(glyph_text(number, 48, y))
         lab = ET.SubElement(g, f"{{{SVG}}}text", {"x": "0", "y": str(y + 30), "text-anchor": "end", "class": "fill-weak",
                                                   "style": "font-size: 20px;"})
         lab.text = label
