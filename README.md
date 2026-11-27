@@ -19,37 +19,14 @@ I'm Aman. I'm a computer science student. I build tools that are useful to me, l
 
 ### Projects
 
-<table>
-  <tr>
-    <td colspan="2" width="33%" valign="top">
-      <b>Home server</b><br>
-      <code>Go</code> <code>Svelte</code> <code>Docker</code><br><br>
-      An old computer turned into an always-on Ubuntu server. I built <b>ykhub</b>, its dashboard: live stats, logs, one-click fixes, phone alerts and an apps page. It runs Jellyfin, AdGuard Home (ad blocking for all my devices), Uptime Kuma, and qBittorrent behind ProtonVPN with a kill switch, all reachable only over Tailscale.
-    </td>
-    <td colspan="2" width="33%" valign="top">
-      <b>Gold Torrent</b> <img src="assets/pill-dev.svg" alt="in development"><br>
-      <code>C++</code> <code>libtorrent</code><br><br>
-      A torrent client for jailbroken PS4s. Downloads keep going in the background, with the app closed or mid-game, and pick up again after a power cut. Add torrents from your phone through a PIN-locked web page. v0.3 runs on my console; 0.4 adds seeding, USB drives and in-app updates.
-    </td>
-    <td colspan="2" width="33%" valign="top">
-      <b><a href="https://github.com/amansingh909/keyglow">keyglow</a></b><br>
-      <code>Rust</code> <code>egui</code><br><br>
-      Layered RGB lighting for Razer keyboards on Linux. Stacks effects the way Chroma Studio does on Windows, on top of OpenRazer.
-    </td>
-  </tr>
-  <tr>
-    <td colspan="3" width="50%" valign="top">
-      <b><a href="https://github.com/amansingh909/gamepad-media-center-aggregator">GMCA for PS4</a></b> <img src="assets/pill-fork.svg" alt="my fork"><br>
-      <code>C++</code> <code>libtorrent</code><br><br>
-      A gamepad media center for Plex, Jellyfin, Emby and Stremio. In my fork I ported libtorrent to the PS4, so Stremio torrents stream right on the console with no PC. It also adds HDR video, subtitles, USB drives, Continue Watching synced with Stremio, and an option to run torrents through a Stremio streaming server on your network, like one behind a VPN. 9 releases, 880+ downloads.
-    </td>
-    <td colspan="3" width="50%" valign="top">
-      <b>REDLINE</b><br>
-      <code>Python</code> <code>Textual</code> <code>Ollama</code><br><br>
-      A terminal app for chatting with local AI models through Ollama, with a switch on every message to turn the model's thinking on or off. Saved sessions and quick model switching.
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <img src="assets/projects/home-server.svg" width="265" alt="Home server. Go, Svelte, Docker. An old computer turned into an always-on Ubuntu server. I built ykhub, its dashboard: live stats, logs, one-click fixes, phone alerts and an apps page. It runs Jellyfin, AdGuard Home (ad blocking for all my devices), Uptime Kuma, and qBittorrent behind ProtonVPN with a kill switch, all reachable only over Tailscale.">
+  <img src="assets/projects/gold-torrent.svg" width="265" alt="Gold Torrent. In development. C++, libtorrent. A torrent client for jailbroken PS4s. Downloads keep going in the background, with the app closed or mid-game, and pick up again after a power cut. Add torrents from your phone through a PIN-locked web page. v0.3 runs on my console; 0.4 adds seeding, USB drives and in-app updates.">
+  <a href="https://github.com/amansingh909/keyglow"><img src="assets/projects/keyglow.svg" width="265" alt="keyglow. Rust, egui. Layered RGB lighting for Razer keyboards on Linux. Stacks effects the way Chroma Studio does on Windows, on top of OpenRazer."></a>
+  <br>
+  <a href="https://github.com/amansingh909/gamepad-media-center-aggregator"><img src="assets/projects/gmca.svg" width="265" alt="GMCA for PS4. My fork. C++, libtorrent. A gamepad media center for Plex, Jellyfin, Emby and Stremio. In my fork I ported libtorrent to the PS4, so Stremio torrents stream right on the console with no PC. It also adds HDR video, subtitles, USB drives, Continue Watching synced with Stremio, and an option to run torrents through a Stremio streaming server on your network, like one behind a VPN. 9 releases, 880+ downloads."></a>
+  <img src="assets/projects/redline.svg" width="265" alt="REDLINE. Python, Textual, Ollama. A terminal app for chatting with local AI models through Ollama, with a switch on every message to turn the model's thinking on or off. Saved sessions and quick model switching.">
+</p>
 
 ### Open source contributions
 
