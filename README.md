@@ -15,7 +15,7 @@
 
 ### About me
 
-Hey, I'm Aman. I'm a computer science student. I build tools that are useful to me, like Linux desktop apps, homebrew for my PS4, a home server that runs my media and DNS, and some security tooling for bug bounty work. I also like contributing to open source.
+I'm Aman. I'm a computer science student. I build tools that are useful to me, like Linux desktop apps, homebrew for my PS4, a home server that runs my media and DNS, and some security tooling for bug bounty work. I also like contributing to open source.
 
 ### Projects
 
