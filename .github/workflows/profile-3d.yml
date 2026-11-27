@@ -31,6 +31,10 @@ jobs:
         env:
           LANGS_TOKEN: ${{ secrets.LANGS_TOKEN }}
         run: python3 .github/scripts/languages.py profile-3d-contrib/profile-red.svg
+      - name: Add busiest day and streaks
+        env:
+          LANGS_TOKEN: ${{ secrets.LANGS_TOKEN }}
+        run: python3 .github/scripts/stats.py profile-3d-contrib/profile-red.svg
       - name: Commit & Push
         run: |
           git config user.name github-actions
