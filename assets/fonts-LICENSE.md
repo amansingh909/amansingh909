@@ -1,6 +1,6 @@
 # Banner font
 
-The banner subtitle embeds a trimmed copy of [Space Grotesk](https://github.com/floriankarsten/space-grotesk) (only the letters the banner uses), under the SIL Open Font License 1.1, reproduced below.
+The project cards embed a trimmed copy of [Space Grotesk](https://github.com/floriankarsten/space-grotesk) (only the letters each card uses), and the banner subtitle is drawn from its letter shapes, under the SIL Open Font License 1.1, reproduced below.
 
 Copyright 2020 The Space Grotesk Project Authors (https://github.com/floriankarsten/space-grotesk)
 
