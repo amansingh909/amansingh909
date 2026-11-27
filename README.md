@@ -1,5 +1,8 @@
 <p align="center">
-  <img src="assets/banner.svg" width="100%" alt="Aman Singh. CS student · Linux tools, Console Homebrew and Networking">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
+    <img src="assets/banner-light.svg" width="100%" alt="Aman Singh. CS student · Linux tools, Console Homebrew and Networking">
+  </picture>
 </p>
 
 <p align="center">
@@ -74,5 +77,8 @@ I'm Aman. I'm a computer science student. I build tools that are useful to me, l
 </p>
 
 <p align="center">
-  <img src="assets/footer.svg" width="100%" alt="">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/footer-dark.svg">
+    <img src="assets/footer-light.svg" width="100%" alt="">
+  </picture>
 </p>
