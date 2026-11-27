@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" width="100%" alt="Aman Singh. CS student · Linux tools, console homebrew and networking">
+  <img src="assets/banner.svg" width="100%" alt="Aman Singh. CS student · Linux tools, Console Homebrew and Networking">
 </p>
 
 <p align="center">
