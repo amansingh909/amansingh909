@@ -41,7 +41,7 @@ I'm Aman. I'm a computer science student. I build tools that are useful to me, l
     <td colspan="3" width="50%" valign="top">
       <b><a href="https://github.com/amansingh909/gamepad-media-center-aggregator">GMCA for PS4</a></b> <img src="assets/pill-fork.svg" alt="my fork"><br>
       <code>C++</code> <code>libtorrent</code><br><br>
-      A gamepad media center for Plex, Jellyfin, Emby and Stremio. In my fork I ported libtorrent to the PS4, so Stremio torrents stream right on the console with no PC. It also adds HDR video, subtitles, USB drives, Continue Watching synced with Stremio, and one-tap in-app updates. 9 releases, 880+ downloads.
+      A gamepad media center for Plex, Jellyfin, Emby and Stremio. In my fork I ported libtorrent to the PS4, so Stremio torrents stream right on the console with no PC. It also adds HDR video, subtitles, USB drives, Continue Watching synced with Stremio, and an option to run torrents through a Stremio streaming server on your network, like one behind a VPN. 9 releases, 880+ downloads.
     </td>
     <td colspan="3" width="50%" valign="top">
       <b>REDLINE</b><br>
